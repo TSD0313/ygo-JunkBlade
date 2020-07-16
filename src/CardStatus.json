@@ -320,7 +320,7 @@
     "atkPoint" : 1000,
     "defPoint" : 2200,
     "effectKey" : "JUNKCOLLECTOR",
-    "text" : "あとで"
+    "text" : "フィールド上に表側表示で存在するこのカードと自分の墓地に存在する通常罠カード１枚をゲームから除外して発動する。このカードの効果は、この効果を発動するためにゲームから除外した通常罠カードの効果と同じになる。この効果は相手ターンでも発動する事ができる。"
   },
   "JeinLightsworn":{
     "imageFileName": "JeinLightsworn.jpg",
@@ -336,7 +336,7 @@
     "atkPoint" : 1800,
     "defPoint" : 1200,
     "effectKey" : "JEINLIGHTSWORN",
-    "text" : "あとで"
+    "text" : "①：このカードが相手モンスターに攻撃するダメージステップの間、このカードの攻撃力は３００アップする。②：自分エンドフェイズに発動する。自分のデッキの上からカードを２枚墓地へ送る。"
   },
   "EhrenLightsworn":{
     "imageFileName": "EhrenLightsworn.jpg",
@@ -352,7 +352,7 @@
     "atkPoint" : 1600,
     "defPoint" : 1000,
     "effectKey" : "EHRENLIGHTSWORN",
-    "text" : "あとで"
+    "text" : "①：このカードが守備表示モンスターを攻撃したダメージ計算前に発動する。そのモンスターを持ち主のデッキに戻す。②：自分エンドフェイズに発動する。自分のデッキの上からカードを３枚墓地へ送る。"
   },
   "SolarExchange":{
     "imageFileName": "SolarExchange.jpg",
@@ -362,7 +362,7 @@
     "cardType": "Spell",
     "spellType": "Normal",
     "effectKey" : "SOLAREXCHANGE",
-    "text" : "あとで"
+    "text" : "①：手札から「ライトロード」モンスター１体を捨てて発動できる。自分はデッキから２枚ドローする。その後、自分のデッキの上からカードを２枚墓地へ送る。"
   },
   "ChargeOfTheLightBrigade":{
     "imageFileName": "ChargeOfTheLightBrigade.jpg",
@@ -372,7 +372,7 @@
     "cardType": "Spell",
     "spellType": "Normal",
     "effectKey" : "CHARGEOFTHELIGHTBRIGADE",
-    "text" : "あとで"
+    "text" : "①：自分のデッキの上からカードを３枚墓地へ送って発動できる。デッキからレベル４以下の「ライトロード」モンスター１体を手札に加える。"
   },
   "HandDestruction":{
     "imageFileName": "HandDestruction.jpg",
@@ -382,7 +382,7 @@
     "cardType": "Spell",
     "spellType": "Quick",
     "effectKey" : "HANDDESTRUCTION",
-    "text" : "あとで"
+    "text" : "①：お互いのプレイヤーは手札を２枚墓地へ送る。その後、それぞれデッキから２枚ドローする。"
   },
   "SpellReproduction":{
     "imageFileName": "SpellReproduction.jpg",
@@ -392,7 +392,7 @@
     "cardType": "Spell",
     "spellType": "Normal",
     "effectKey" : "SPELLREPRODUCTION",
-    "text" : "あとで"
+    "text" : "手札の魔法カードを２枚墓地に送る。自分の墓地から魔法カードを１枚選択し、手札に加える。"
   },
   "FoolishBurial":{
     "imageFileName": "FoolishBurial.jpg",
@@ -402,7 +402,7 @@
     "cardType": "Spell",
     "spellType": "Normal",
     "effectKey" : "FOOLISHBURIAL",
-    "text" : "あとで"
+    "text" : "①：デッキからモンスター１体を墓地へ送る。"
   },
   "MonsterReincarnation":{
     "imageFileName": "MonsterReincarnation.jpg",
@@ -412,7 +412,7 @@
     "cardType": "Spell",
     "spellType": "Normal",
     "effectKey" : "MONSTERREINCARNATION",
-    "text" : "あとで"
+    "text" : "①：手札を１枚捨て、自分の墓地のモンスター１体を対象として発動できる。そのモンスターを手札に加える。"
   },
   "ReturnFromTheDD":{
     "imageFileName": "ReturnFromTheDD.jpg",
@@ -422,6 +422,6 @@
     "cardType": "Trap",
     "trapType": "Normal",
     "effectKey" : "RETURNFROMTHEDD",
-    "text" : "あとで"
+    "text" : "ライフポイントを半分払って発動できる。ゲームから除外されている自分のモンスターを可能な限り自分フィールド上に特殊召喚する。この効果で特殊召喚したモンスターはエンドフェイズ時にゲームから除外される。"
   }
 }
