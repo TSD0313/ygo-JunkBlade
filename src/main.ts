@@ -4410,7 +4410,7 @@ window.onload = function() {
     DogmaButton.y = 20;
     mainstage.addChild(DogmaButton);
     DogmaButton.on("click", function(e){
-        window.open("https://tsd0313.github.io/ygo-JunkBlade/dist/")
+        window.open("https://tsd0313.github.io/ygo-DogmaBlade/dist/")
     }, null, false);
 
     const howtoButton = createButton("HOW TO PLAY", 160, 40, "#0275d8");
