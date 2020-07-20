@@ -4396,7 +4396,7 @@ window.onload = function() {
     const TweetButtonImg = new createjs.Bitmap("tweet.png");
     TweetButtonImg.cursor = "pointer";
     TweetButtonImg.x = 1275
-    TweetButtonImg.y = 525;
+    TweetButtonImg.y = 825;
     mainstage.addChild(TweetButtonImg);
 
     TweetButtonImg.on("click", function(e){
