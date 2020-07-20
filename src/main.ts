@@ -3877,8 +3877,15 @@ window.onload = function() {
             };
             eff1.whenActive = (eff :effect) => {
                 return new Promise(async(resolve, reject) => {
-                    const cardlist = genCardArray({category:["RIGHTSWORN"],location:["HAND"]});
-                    eff.targetCard = await openCardListWindow.select(cardlist,1,1,eff,"捨てるライトロードを1枚選択してください");
+                    // const cardlist = genCardArray({category:["RIGHTSWORN"],location:["HAND"]});
+                    // eff.targetCard = await openCardListWindow.select(cardlist,1,1,eff,"捨てるライトロードを1枚選択してください");
+                    const EheinArray = genCardArray({ID:["44178886"],location:["HAND"]});
+                    const JeinArray = genCardArray({ID:["96235275"],location:["HAND"]});
+                    if(1<=EheinArray.length){
+                        eff.targetCard = [EheinArray[0] ];
+                    }else{
+                        eff.targetCard = [JeinArray[0] ];
+                    };
                     await discard(eff.targetCard);
                     resolve();
                 });
@@ -3920,7 +3927,14 @@ window.onload = function() {
                     const cardlist = genCardArray({category:["RIGHTSWORN"],location:["DECK"]})
                                         .filter(card => card instanceof MonsterCard && card.level <= 4);
                     if(1<=cardlist.length){
-                        eff.targetCard = await openCardListWindow.select(cardlist,1,1,eff,"手札に加えるカードを選択してください");
+                        const EheinArray = genCardArray({ID:["44178886"],location:["DECK"]});
+                        const JeinArray = genCardArray({ID:["96235275"],location:["DECK"]});
+                        if(1<=EheinArray.length){
+                            eff.targetCard = [EheinArray[0]];
+                        }else{
+                            eff.targetCard = [JeinArray[0]];
+                        };
+                        // eff.targetCard = await openCardListWindow.select(cardlist,1,1,eff,"手札に加えるカードを選択してください");
                         await search(eff.targetCard);
                     }else{
                         await openMessageWindow("デッキに該当カードがありません")
@@ -4391,17 +4405,25 @@ window.onload = function() {
                     window.open(url, null,"width=650, height=300, personalbar=0, toolbar=0, scrollbars=1, sizable=1")
     }, null, false);
 
+    const DogmaButton = createButton(" ▶ DOGMA BLADE ", 200, 60, "#DDA0DD");
+    DogmaButton.x = 1275;
+    DogmaButton.y = 20;
+    mainstage.addChild(DogmaButton);
+    DogmaButton.on("click", function(e){
+        window.open("https://tsd0313.github.io/ygo-JunkBlade/dist/")
+    }, null, false);
+
     const howtoButton = createButton("HOW TO PLAY", 160, 40, "#0275d8");
     howtoButton.x = 1300;
-    howtoButton.y = 500;
+    howtoButton.y = 900;
     mainstage.addChild(howtoButton);
     howtoButton.on("click", function(e){
         openHowtoWindow();
     }, null, false);
 
-    const trunEndButton = createButton("TURN END", 160, 40, "#0275d8");
+    const trunEndButton = createButton("TURN END", 160, 60, "#0275d8");
     trunEndButton.x = 1300;
-    trunEndButton.y = 660;
+    trunEndButton.y = 540;
     trunEndButton.alpha = 0;
     cardContainer.addChild(trunEndButton);
     trunEndButton.on("click", function async(e){
@@ -4409,18 +4431,18 @@ window.onload = function() {
         toEndPhase();
     }, null, false);
 
-    const gameEndButton = createButton("GAME END", 160, 40, "#0275d8");
+    const gameEndButton = createButton("GAME END", 160, 60, "#0275d8");
     gameEndButton.x = 1300;
-    gameEndButton.y = 710;
+    gameEndButton.y = 630;
     gameEndButton.alpha = 0;
     cardContainer.addChild(gameEndButton);
     gameEndButton.on("click", function async(e){
         gameEND();
     }, null, false);
 
-    const resetButton = createButton("RESET", 160, 80, "#0275d8");
+    const resetButton = createButton("RESET", 160, 60, "#0275d8");
     resetButton.x = 1300;
-    resetButton.y = 800;
+    resetButton.y = 720;
     resetButton.alpha = 0;
     cardContainer.addChild(resetButton);
     resetButton.on("click", function async(e){
@@ -5007,7 +5029,7 @@ window.onload = function() {
         OkButton.regX = OkButton.getBounds().width/2;
         OkButton.regY = OkButton.getBounds().height/2;
         OkButton.x = -75;
-        OkButton.y = TextContainer.getBounds().height-20;
+        OkButton.y = TextContainer.getBounds().height-10;
         OkButton.addEventListener("click",clickOkButton);
         function clickOkButton(event) {
             mainstage.removeChild(HowtoWindowContainer);
