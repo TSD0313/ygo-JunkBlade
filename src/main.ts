@@ -2214,7 +2214,7 @@ window.onload = function() {
                         .to({x:game.displayOrder.deck[0][0],y:game.displayOrder.deck[0][1],rotation:0},500,createjs.Ease.quintOut)
                         .call(()=>{resolve()});
                 }); 
-                await timeout(50);
+                await timeout(25);
             };
         })();  
     };
@@ -2306,13 +2306,12 @@ window.onload = function() {
             });
         };
         return new Promise<void>(async(resolve, reject) => {
-            await (async () => {
-                for (let i = 0; i < count ; i++){
-                    const targetCard = game.DECK[game.DECK.length -1];
-                    await moveCard.DECK.toHAND(targetCard);
-                    console.log("draw");
-                };
-            })();
+            for (let i = 0; i < count ; i++){
+                const targetCard = game.DECK[game.DECK.length -1];
+                moveCard.DECK.toHAND(targetCard);
+                console.log("draw");
+            };
+            await timeout(500);
             resolve();
         });
     };
@@ -2534,10 +2533,9 @@ window.onload = function() {
             for (let i = 0; i < rightswornArray.length ; i++){
                 await animationChainEffectActivate(rightswornArray[i].effect[0]);
                 await rightswornArray[i].effect[0].whenResolve(rightswornArray[i].effect[0]);
-                await timeout(500);
+                await timeout(250);
             };
         })();
-        await shadPhase("TURN END");
         await shadPhase("ENEMY TURN");
 
         genCardArray({cardType:["Spell","Trap"],location:["ST"],face:["DOWN"]}).forEach(card=>{
@@ -2663,7 +2661,7 @@ window.onload = function() {
                         .to({x:game.displayOrder.deck[0][0],y:game.displayOrder.deck[0][1],rotation:0},500,createjs.Ease.quintOut)
                         .call(()=>{resolve()});
                 }); 
-                await timeout(50);                
+                await timeout(25);                
             };
         })();
         await timeout(250);
@@ -4226,7 +4224,7 @@ window.onload = function() {
 
     const createdbyText = new createjs.Text("Created by  ", "24px serif","black");
     const twiAccountText = new createjs.Text("@toride0313", "24px serif","black");
-    const updateText = new createjs.Text(" /Update 2020.07.15 レシピ変更", "24px serif","black");
+    const updateText = new createjs.Text(" /Update 2020.07.22　", "24px serif","black");
     twiAccountText.x = createdbyText.getMeasuredWidth();
     updateText.x = createdbyText.getMeasuredWidth()+twiAccountText.getMeasuredWidth()+5;
     twiAccountText.color = "#1111cc";
@@ -4729,10 +4727,10 @@ window.onload = function() {
 
         const YesNoContainer = new createjs.Container();
 
-        const YesButton = createButton("YES", 150, 40, "#0275d8");
+        const YesButton = createButton("YES", 150, 80, "#0275d8");
         YesNoContainer.addChild(YesButton);
 
-        const NoButton = createButton("NO", 150, 40, "#0275d8");
+        const NoButton = createButton("NO", 150, 80, "#0275d8");
         NoButton.x = NoButton.getBounds().width*8;
         YesNoContainer.addChild(NoButton);
 
@@ -4989,9 +4987,9 @@ window.onload = function() {
 
         // const messageC1 ="デッキガイド："
         // const messageC2 =" ドグマブレード｜ンマルギルドーニ｜note"
-        const textA = new createjs.Text("ジャンクブレードをぶん回し、先攻1ターンキルを達成しよう！", "24px serif","black");
-        const textB = new createjs.Text("セットした罠や速攻魔法はターンエンド後に発動できるぞ。", "24px serif","black");
-        const textC = new createjs.Text("", "24px serif","black");
+        const textA = new createjs.Text("ジャンクブレードをぶん回し、先攻1ターンキルを達成しましょう。", "24px serif","black");
+        const textB = new createjs.Text("セットした罠・速攻魔法はターンエンド後に発動できます。", "24px serif","black");
+        const textC = new createjs.Text("　", "24px serif","black");
         // const textC1 = new createjs.Text(messageC1, "24px serif","black");
         // const textC2 = new createjs.Text(messageC2, "24px serif","black");
         // textC2.color = "#1111cc";
@@ -5029,7 +5027,7 @@ window.onload = function() {
         OkButton.regX = OkButton.getBounds().width/2;
         OkButton.regY = OkButton.getBounds().height/2;
         OkButton.x = -75;
-        OkButton.y = TextContainer.getBounds().height-10;
+        OkButton.y = TextContainer.getBounds().height-20;
         OkButton.addEventListener("click",clickOkButton);
         function clickOkButton(event) {
             mainstage.removeChild(HowtoWindowContainer);
